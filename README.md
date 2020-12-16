@@ -5,11 +5,9 @@ Home: https://CRAN.R-project.org/package=sNPLS
 
 Package license: GPL (>= 2)
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-snpls-feedstock/blob/master/LICENSE.txt)
 
 Summary: Tools for performing variable selection in three-way data using N-PLS  in combination with L1 penalization. The N-PLS model (Rasmus Bro, 1996  <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>) is the  natural extension of PLS (Partial Least Squares) to N-way structures, and tries  to maximize the covariance between X and Y data arrays. The package also adds variable selection through L1 penalization.
-
-
 
 Current build status
 ====================
