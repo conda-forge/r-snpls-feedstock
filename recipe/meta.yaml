@@ -1,4 +1,4 @@
-{% set version = '0.3.31' %}
+{% set version = '1.0.27' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sNPLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sNPLS/sNPLS_{{ version }}.tar.gz
-  sha256: 5ef487c1a13a044320c7d7c1435e9c71ba5ad4f5584809dc662703002c714249
+  sha256: 7b7b3609aa88cee08901acdfe5e758d83fd5c217abfbca2fe9ea575e5b660540
 
 build:
   merge_build_host: True  # [win]
-  number: 3
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -27,22 +27,24 @@ requirements:
     - r-base
     - r-mass
     - r-matrix
-    - r-car
+    - r-clickr
+    - r-future
+    - r-future.apply
     - r-ggplot2
+    - r-ggrepel
     - r-ks
     - r-pbapply
-    - r-plotrix
-    - r-rgl
   run:
     - r-base
     - r-mass
     - r-matrix
-    - r-car
+    - r-clickr
+    - r-future
+    - r-future.apply
     - r-ggplot2
+    - r-ggrepel
     - r-ks
     - r-pbapply
-    - r-plotrix
-    - r-rgl
 
 test:
   commands:
@@ -51,34 +53,35 @@ test:
 
 about:
   home: https://CRAN.R-project.org/package=sNPLS
-  license: GPL (>= 2)
-  summary: Tools for performing variable selection in three-way data using N-PLS  in combination
-    with L1 penalization. The N-PLS model (Rasmus Bro, 1996  <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>)
-    is the  natural extension of PLS (Partial Least Squares) to N-way structures, and
-    tries  to maximize the covariance between X and Y data arrays. The package also
-    adds variable selection through L1 penalization.
-  license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license: GPL-2.0-or-later
+  summary: Tools for performing variable selection in three-way data using N-PLS in combination
+    with L1 penalization, Selectivity Ratio and VIP scores. The N-PLS model (Rasmus
+    Bro, 1996 <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>)
+    is the natural extension of PLS (Partial Least Squares) to N-way structures, and
+    tries to maximize the covariance between X and Y data arrays. The package also adds
+    variable selection through L1 penalization, Selectivity Ratio and VIP scores.
+  license_family: GPL2
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - PertuyF
 
 # Package: sNPLS
 # Type: Package
 # Title: NPLS Regression with L1 Penalization
-# Version: 0.3.31
+# Version: 1.0.27
 # Author: David Hervas
 # Maintainer: David Hervas <ddhervas@yahoo.es>
 # Depends: R (>= 2.10)
-# Imports: car, ggplot2, ks, MASS, Matrix, parallel, pbapply, plotrix, rgl
-# Description: Tools for performing variable selection in three-way data using N-PLS  in combination with L1 penalization. The N-PLS model (Rasmus Bro, 1996  <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>) is the  natural extension of PLS (Partial Least Squares) to N-way structures, and tries  to maximize the covariance between X and Y data arrays. The package also adds variable selection through L1 penalization.
+# Imports: clickR, future, future.apply, ggplot2, ggrepel, ks, MASS, Matrix, pbapply
+# Description: Tools for performing variable selection in three-way data using N-PLS in combination with L1 penalization, Selectivity Ratio and VIP scores. The N-PLS model (Rasmus Bro, 1996 <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>) is the natural extension of PLS (Partial Least Squares) to N-way structures, and tries to maximize the covariance between X and Y data arrays. The package also adds variable selection through L1 penalization, Selectivity Ratio and VIP scores.
 # License: GPL (>= 2)
 # Encoding: UTF-8
 # LazyData: true
-# RoxygenNote: 6.0.1
+# RoxygenNote: 7.1.1
 # NeedsCompilation: no
-# Packaged: 2018-02-20 17:20:34 UTC; bioestadistica
+# Packaged: 2020-12-16 10:18:46 UTC; aghil
 # Repository: CRAN
-# Date/Publication: 2018-02-20 17:29:58 UTC
+# Date/Publication: 2020-12-16 12:50:02 UTC
