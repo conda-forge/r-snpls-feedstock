@@ -1,4 +1,4 @@
-{% set version = '1.0.27' %}
+{% set version = "1.0.41" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sNPLS_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sNPLS/sNPLS_{{ version }}.tar.gz
-  sha256: 7b7b3609aa88cee08901acdfe5e758d83fd5c217abfbca2fe9ea575e5b660540
+  sha256: ab2e5e1a499ce552d281e64087a9be0c553d73287a03ecc8f258301a07af7058
 
 build:
-  number: 4
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -52,12 +52,8 @@ test:
 about:
   home: https://CRAN.R-project.org/package=sNPLS
   license: GPL-2.0-or-later
-  summary: Tools for performing variable selection in three-way data using N-PLS in combination
-    with L1 penalization, Selectivity Ratio and VIP scores. The N-PLS model (Rasmus
-    Bro, 1996 <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>)
-    is the natural extension of PLS (Partial Least Squares) to N-way structures, and
-    tries to maximize the covariance between X and Y data arrays. The package also adds
-    variable selection through L1 penalization, Selectivity Ratio and VIP scores.
+  summary: Tools for performing variable selection in three-way data using N-PLS in combination with L1 penalization, Selectivity Ratio and VIP scores. The N-PLS model (Rasmus Bro, 1996 <DOI:10.1002/(SICI)1099-128X(199601)10:1%3C47::AID-CEM400%3E3.0.CO;2-C>) is the natural extension of PLS (Partial Least Squares) to 
+    N-way structures, and tries to maximize the covariance between X and Y data arrays. The package also adds variable selection through L1 penalization, Selectivity Ratio and VIP scores.
   license_family: GPL2
   license_file:
     - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
